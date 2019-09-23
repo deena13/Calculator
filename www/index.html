@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta name="viewport" content="width=device-width, initialscale=1">
+<link rel="stylesheet" href="jq/jquery.mobile-1.4.5.css">
+<script src="jq/jquery.js"></script>
+<script src="jq/jquery.mobile-1.4.5.js"></script>
+<script src="cordova.js"> </script> 
+<script>
+$(document).on("pagecreate","#page3",function(){
+
+var x=parseInt(document.querySelector('#operand1').value);
+var y=parseInt(document.querySelector('#operand2').value);
+var z=document.querySelector('#op').value;
+
+if (z==='+'){
+		document.querySelector('#summary').value= x+ " + " +y;
+		document.querySelector('#result').value= x +y;
+}else
+if (z==='-'){
+		document.querySelector('#summary').value= x+ " - " +y;
+		document.querySelector('#result').value= x -y;
+}else
+if (z==='*'){
+		document.querySelector('#summary').value= x+ " * " +y;
+		document.querySelector('#result').value= x *y;
+}else
+if (z==='/'){
+		document.querySelector('#summary').value= x+ " / " +y;
+		document.querySelector('#result').value= x /y;
+}
+});
+</script>
+<!--<script src="calc.js"> </script>-->
+    <title>Calculator Mob</title>
+<style>
+		.ui-content{
+			background-color:#4b7f94;
+		}
+</style>
+
+</head>
+<!--Below is the coding part of body section -->
+<body>
+
+<!--Header section -->
+<div data-role="page" data-dialog="true" id="page1" data-theme="b"> 
+<div data-role="header">
+ <h1>Simple Calculator</h1> 
+  <div data-role="navbar">
+	<ul> 
+		<li><a href="#page1" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+		<li><a href="#page2" data-transition="flow" data-icon="grid">Calculator</a></li> 
+		<li><a href="#page4" data-transition="flow" data-icon="info">Help</a></li> 
+	</ul>	
+ </div>
+</div>
+<!--Main part content -->
+<div data-role="main" class="ui-content" > 
+	<p>Welcome to your simple calculator, please select an icon to continue!</p> 
+</div>
+<!--Footer section -->
+<div data-role="footer"> 
+	<p> This is a jQuery mobile exercise which provides the user wih a calculator
+for basic mathematical operations	</p>
+	<h2>Homework - Week 4</h2> 
+</div>
+</div>
+<!--End of PAGE 1 -> Homepage-->
+
+<!--/////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<!--Start of PAGE 2 -->
+<!--Header section -->
+<div data-role="page" data-dialog="true" id="page2" data-theme="b"> 
+<div data-role="header">
+ <h1>Simple Calculator</h1> 
+  <div data-role="navbar">
+	<ul> 
+		<li><a href="#page1" data-transition="flow" data-icon="home" >Home</a></li>
+		<li><a href="#page2" data-icon="grid" class="ui-btn-active ui-state-persist">Calculator</a></li> 
+		<li><a href="#page4" data-transition="flow" data-icon="info">Help</a></li> 
+	</ul>	
+ </div>
+</div>
+<!--Main part content -->
+<div data-role="main" class="ui-content" > 
+	 <form method="post" > 
+		<div class="ui-field-contain"> 
+			<label for="operand1">Num 1:</label> 
+			<input type="text" name="operand1" id="operand1"> 
+			
+				<label >Operation</label> 
+				<select  id="op"> 
+					<option value="+">+</option> 
+					<option value="-">-</option> 
+					<option value="*">*</option> 
+					<option value="/">/</option>
+				</select> 
+				
+			<label for="operand2">Num 2:</label> 
+			<input type="text" name="operand2" id="operand2"> 
+			
+		<div data-role="controlgroup" >
+			<a href="#page3" type="button" id="test" class="ui-btn">Calculate</a> 
+			
+		</div>
+		</div> 
+	 </form>
+</div>
+<!--Footer section -->
+<div data-role="footer"> 
+	<h2>Homework - Week 4</h2> 
+</div>
+</div>
+<!--End of PAGE 2 -->
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<!--Start of PAGE 3 -->
+<!--Header section -->
+<div data-role="page" data-dialog="true" id="page3" data-theme="b"> 
+<div data-role="header">
+ <h1>Results</h1> 
+  <div data-role="navbar">
+	<ul> 
+		<li><a href="#page1" data-transition="flow" data-icon="home">Home</a></li>
+		<li><a href="#page2" data-icon="grid" class="ui-btn-active ui-state-persist">Calculator</a></li> 
+		<li><a href="#page4" data-transition="flow" data-icon="info">Help</a></li> 
+	</ul>	
+ </div>
+</div>
+<!--Main part content -->
+
+<div data-role="main" class="ui-content" > 		
+			
+			<p>Operation:</p> 
+			<input type="text"  id="summary"> 
+				
+			<p>Results:</p> 
+			<input type="text"  id="result"> 
+</div>			
+		<a href="#page2" data-transition="slide" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+		
+	
+
+<!--Footer section -->
+<div data-role="footer"> 
+	<h2>Homework - Week 4</h2> 
+</div>
+</div>
+<!--End of PAGE 3 -->
+
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<!--Start of PAGE 4 -->
+<!--Header section -->
+<div data-role="page" data-dialog="true" id="page4" data-theme="b"> 
+<div data-role="header">
+ <h1>Simple Calculator</h1> 
+  <div data-role="navbar">
+	<ul> 
+		<li><a href="#page1" data-transition="flow" data-icon="home">Home</a></li>
+		<li><a href="#page2" data-transition="flow" data-icon="grid">Calculator</a></li> 
+		<li><a href="#page4"  data-icon="info" class="ui-btn-active ui-state-persist">Help</a></li> 
+	</ul>	
+ </div>
+</div>
+<!--Main part content -->
+<div data-role="main" class="ui-content" > 
+	 <p> This is the help section and shall assist you in using the calculator.</p>
+		
+		<p>
+		1. Insert numbers in the fields <br>
+		2. Select an operator from the dropdown <br>
+		3. Click on the "Calculate" button and here you are!! <br>
+	
+		</p>
+	<p>Author: DEENA Prashant   <br>Id: 1803_15409 </p>
+</div>
+<!--Footer section -->
+<div data-role="footer"> 
+	<h2>Homework - Week 4</h2> 
+</div>
+</div>
+<!--End of PAGE 4 -->
+</body>
+
+</html>
